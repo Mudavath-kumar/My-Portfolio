@@ -1,120 +1,65 @@
-
-gsap.from("header h1",{
-    opacity:0,
-    duration:1,
-    y:50,
-    delay:1,
-    stagger:1
-
-})
-
-gsap.from("img ",{
-    opacity:0,
-    duration:1,
-    y:50,
-    delay:2,
-    stagger:1
-
-})
-
-gsap.from("about, b ,p,h2",{
-    opacity:0,
-    duration:1,
-    y:50,
-    delay:3,
-    stagger:1
-
-})
-
-
-
-
-gsap.from("ul",{
-    opacity:0,
-    duration:0.5,
-    y:50,
-    delay:1,
-    stagger:1
-
-})
-
-gsap.from("a",{
-    opacity:0,
-    duration:0.5,
-    y:50,
-    delay:1,
-    stagger:1
-
-})
-
-
-
-
-
-
-
+// script.js
 // Smooth Scroll for Navigation Links
-document.querySelectorAll('nav ul li a').forEach(anchor => {
+document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
 
-        // Get the target ID from href and scroll to the section
         const targetId = this.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
 
         if (targetElement) {
             window.scrollTo({
-                top: targetElement.offsetTop - 60, // Adjust scroll position for any fixed headers
-                behavior: 'smooth' // Smooth scrolling effect
+                top: targetElement.offsetTop - 50, // Adjust offset as needed
+                behavior: 'smooth'
             });
         }
     });
 });
 
-// Simple Contact Form Validation
-document.getElementById('contact-form').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent form submission
-
-    // Get form fields
-    const name = this.querySelector('input[type="text"]').value.trim();
-    const email = this.querySelector('input[type="email"]').value.trim();
-    const message = this.querySelector('textarea').value.trim();
-
-    // Basic validation: check if fields are not empty
-    if (!name || !email || !message) {
-        alert("Please fill in all fields.");
-    } else {
-        alert("Message sent successfully!");
-
-        // Reset the form after successful submission
-        this.reset();
-    }
+// GSAP Animations
+gsap.from("header h1", {
+    opacity: 0,
+    duration: 1,
+    y: 50,
+    delay: 0.5 // Reduced delay for faster animation
 });
 
-/*document.addEventListener('DOMContentLoaded', function() {
-    Email.send({
-        Host : "smtp.elasticemail.com",
-        Username : "wordp726@gmail.com",
-        Password : "Kumar@054",
-        To : 'kc893825@gmail.com',
-        From : document.getElementById("email"), // Corrected
-        Subject : "new contact query",
-        Body :" name: " + document.getElementById("name")
+gsap.from(".skills-images img", {
+    opacity: 0,
+    duration: 1,
+    y: 50,
+    delay: 1,
+    stagger: 0.2 // Reduced stagger for smoother effect
+});
 
-        + "<br> Email:" + document.getElementById("email")
+gsap.from("#about h2, #about p", {
+    opacity: 0,
+    duration: 1,
+    y: 50,
+    delay: 1.5,
+    stagger: 0.3
+});
 
-        + "<br> Messege:" + document.getElementById("messege")
+gsap.from("#projects h2", {
+    opacity: 0,
+    duration: 1,
+    y: 50,
+    delay: 2,
+});
 
-    }).then(
-        message => alert("message sent succesfully")
-    );
-});*/
+gsap.from(".project", {
+    opacity: 0,
+    duration: 1,
+    y: 50,
+    delay: 2.3,
+    stagger: 0.2
+});
 
-gsap.from("header h1",{
-    opacity:0,
-    duration:1,
-    
-    delay:1,
-    stagger:1
+gsap.from("#contact h2, #contact p, #contact ul", {
+    opacity: 0,
+    duration: 1,
+    y: 50,
+    delay: 2.8,
+    stagger: 0.3
+});
 
-})
